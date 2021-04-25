@@ -1,8 +1,9 @@
 import React from 'react';
+import { Cart } from 'react-bootstrap-icons';
 
 const CartWidget = () => {
     return (  
-        <img className="cart" src="https://icons.iconarchive.com/icons/graphicloads/colorful-long-shadow/256/Cart-icon.png" />
+       <Cart size={25} color="white"></Cart>
         
 
     );

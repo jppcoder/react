@@ -2,22 +2,22 @@ import React from 'react';
 import './App.css';
 import ItemListContainer from './components/container/ItemListContainer';
 import NavBar from './components/NavBar/NavBar';
-
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 
 function App() {
-  return (
-    <div className="App">
+  return ( 
+    <div className="App container fluid">
       <header className="App-header">
-        <NavBar />
+      <BrowserRouter> 
+        <NavBar />       
+        <ItemListContainer className="intro"/>
+      </BrowserRouter>
       </header>
-      <main>
-        <ItemListContainer text="Hola bienvenido a mi pagina de RetroGames Arcade" className="intro"/>
-      </main>
     </div>
   
-
   );
 }
 
