@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
-import "./style.css";
 
-export default function botonPrueba() {
+
+export default function BotonPrueba() {
 
   const [contador, setContador] = useState(0);
   const [moment, setMoment] = useState('');

@@ -1,38 +1,29 @@
-import React, { useState } from "react";
-import { Card } from "react-bootstrap";
+import React, { useState, useEffect } from 'react';
+import { Card, Button } from 'react-bootstrap';
+import { Contador } from './Contador';
 
 
-export const Item = () => {
-  
-  const [value, setValue] = useState(0);
-  
-  
+const Item = ({name,desc,price,img,id,stock}) => {
+    
 
-  function show () {
-    alert(`Agregaste ${value} al carrito`);
-  }
-
-  const add = () => {
-    value >= 0 ? setValue(value + 1) : setValue(value);
-  };
-
-  const remove = () => {
-     value > 0 ? setValue(value - 1) : setValue(value);
-  };
-
-  return (
-    <>
-        <p>Cantidad {value}</p>
-        <button className="btn btn-primary plusCircle" onClick={add}>
-        Agregar
-        </button>
-         <button onClick={remove} className="btn btn-danger">
-        Quitar
-        </button>
-        <button className="btn btn-warning" onClick={show}>
-        {" "}
-        Enviar al carrito{" "}
-        </button>
-    </>
+    return ( 
+      <> 
+        
+        <div className="col"
+          key={id}>
+          <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src={img} />
+            <Card.Body>
+              <Card.Title>{name}</Card.Title>
+              <Card.Text>
+                {desc}
+              </Card.Text>
+              <Contador stock={stock}/>
+              </Card.Body>
+          </Card>  
+        </div>  
+      </> 
     );
-};
+}
+
+export default Item;
